@@ -450,7 +450,7 @@ Simulation=function(SimulationYeartemp,SimulationTimestepStarttemp,SimulationTim
                 ssb <-prediction_time
                 ssb <- ssb[with(ssb, order(Year, timestep)),]
                 SSBthistimestep<- ssb[ssb$timestep==3,]
-                SSBthistimestep<- SSBthistimestep$ssb[SSBthistimestep$Year==2007+yr]
+                SSBthistimestep<- SSBthistimestep$ssb[SSBthistimestep$Year==tail(SSBthistimestep$Year,1)-6]
               }
               bootnls<-read.csv('bootnls.csv')
               alpha<-bootnls$a
